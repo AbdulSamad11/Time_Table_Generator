@@ -2,13 +2,12 @@
 using namespace std;
 int main()
 {
-	int k=7; //total courses
-	
-	//can input for teachers courses classes later in this matrix
+	int k=7; 
+
 	string avail[3][k]={
-		{"rubina","samyan","atif","amina","tauqeer","talia","laeeq"}, //list of teachers
-		{"mc"    ,"algo"  ,"dbms",  "os","taf",   "os_lab",  "dbms_lab"}, //list of courses
-		{"3"    ,"3"  ,"3",  "3","3",   "3",  "3"}, //x classes
+		{"rubina","samyan","atif","amina","tauqeer","talia","laeeq"}, 
+		{"mc"    ,"algo"  ,"dbms",  "os","taf",   "os_lab",  "dbms_lab"},
+		{"3"    ,"3"  ,"3",  "3","3",   "3",  "3"},
 	
 	};
 	
