@@ -1,24 +1,21 @@
-w_hours = 8;
+//daily working hours is in.... hour
+//teachers list is in ...teacher
+//class room names are in ...rooms
+// course names are in coursesNames
+//lectures with weekly ch like 1+1+1,2+2
 w_days = 5;
-k = 2;
-n = 2;
-m = 2;
-teachers_list = [];
-teachers_list.push("samyan");
-teachers_list.push("atif");
-courses_list = [];
-courses_list.push("aoa");
-courses_list.push("db");
-
-classes_list = [];
-classes_list.push(3);
-classes_list.push(2);
-classes_list.push(1);
-classes_list.push(1);
-
+w_hours = 8;
+teacher = ["samyan", "atif", "talia", "tauqeer", "rubina"];
+m = teacher.length;
+rooms = ["1.1", "1.2"];
+n = rooms.length;
+coursesNames = ["samyan", "atif", "talia", "tauqeer", "rubina"];
+k = coursesNames.length;
+console.log(k);
+lectures = ["2+1", "3+1", "1+1+1", "2+2", "3"];
 function teachers(name) {
   this.name = name;
-  avail = [
+  this.avail = [
     [true, true, true, true, true, true, true],
     [true, true, true, true, true, true, true],
     [true, true, true, true, true, true, true],
@@ -26,12 +23,10 @@ function teachers(name) {
     [true, true, true, true, true, true, true],
   ];
 }
-t = [];
-teacher = new teachers("samyan");
-t.push(teacher);
-teacher = new teachers("atif");
-t.push(teacher);
 
+function teacherAvail(avail, i, j) {
+  return avail[i][j];
+}
 
 function course(name, teach, code, classes, meetTimes, pointer) {
   this.name = name;
@@ -41,12 +36,6 @@ function course(name, teach, code, classes, meetTimes, pointer) {
   this.meetTimes = meetTimes;
   this.pointer = pointer;
 }
-courses = [];
-a = new course("aoa", t[0].name, 0, 2, 2, 0);
-courses.push(a);
-a = new course("db", t[1].name, 0, 2, 2, 0);
-courses.push(a);
-
 
 schedule = [
   ["none", "none", "none", "none", "none", "none", "none"],
@@ -56,7 +45,7 @@ schedule = [
   ["none", "none", "none", "none", "none", "none", "none"],
 ];
 
-//need to test
+
 function generate() {
   t_name;
   c_name;
