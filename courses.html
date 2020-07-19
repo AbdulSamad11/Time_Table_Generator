@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scr.js"></script>
+    <style></style>
+  </head>
+
+  <body>
+    <div>
+      <nav>
+        <input type="checkbox" name="" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Abdul Samad</label>
+        <ul>
+          <li><a href="hours.html">HOURS</a></li>
+          <li><a href="rooms.html">ROOMS</a></li>
+          <li><a href="courses.html" class="active">COURSES</a></li>
+          <li><a href="teachers.html">TEACHERS</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="sec">
+      <div class="inp">
+        <input type="text" id="myInput" name="" placeholder="Course Name" />
+        <button type="submit" id="myBtn" onclick="getCourse()">ADD</button>
+        <p id="name"></p>
+      </div>
+      <center>
+        <!-- next button -->
+        <input
+          type="text"
+          id="myInput1"
+          name=""
+          placeholder="lectues in week (3+1)"
+        />
+        <button type="submit" id="myBtn1" onclick="getLectures()">ADD</button>
+        <p id="name1"></p>
+      </center>
+
+      <script>
+        var input = document.getElementById("myInput");
+        input.addEventListener("keyup", function (event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("myBtn").click();
+          }
+        });
+        var input = document.getElementById("myInput1");
+        input.addEventListener("keyup", function (event) {
+          if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("myBtn1").click();
+          }
+        });
+
+        coursesNames = [];
+        function getCourse() {
+          Name = document.getElementById("myInput").value;
+          coursesNames.push(Name);
+          document.getElementById("name").innerHTML = coursesNames;
+          document.getElementById("myInput").value = "";
+        }
+        lectures = [];
+        function getLectures() {
+          Name = document.getElementById("myInput1").value;
+          lectures.push(Name);
+          document.getElementById("name1").innerHTML = lectures;
+          document.getElementById("myInput1").value = "";
+        }
+      </script>
+    </section>
+  </body>
+</html>

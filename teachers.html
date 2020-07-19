@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scr.js"></script>
+
+    <style>
+      #gen {
+        padding-left: 65px;
+        padding-right: 65px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 8px;
+        background-color: rgb(40, 192, 40);
+      }
+      table {
+        background-color: rgb(68, 192, 192);
+        border-collapse: collapse;
+      }
+      tr,
+      td,
+      th {
+        border: 2px solid brown;
+        color: rgb(70, 16, 121);
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 4px;
+        background-color: rgb(40, 192, 40);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <nav>
+        <input type="checkbox" name="" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Abdul Samad</label>
+        <ul>
+          <li><a href="hours.html">HOURS</a></li>
+          <li><a href="rooms.html">ROOMS</a></li>
+          <li><a href="courses.html">COURSES</a></li>
+          <li><a href="teachers.html" class="active">TEACHERS</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="sec">
+      <div class="inp">
+        <input
+          type="text"
+          name=""
+          id="myInput"
+          placeholder="Enter Teacher names"
+        />
+        <button id="myBtn" type="submit" onclick="getTeacher()">ADD</button>
+        <button id="myBtn" type="submit" onclick="getTeacherr()">show</button>
+        <p id="name"></p>
+        <script>
+          var input = document.getElementById("myInput");
+          input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+              event.preventDefault();
+              document.getElementById("myBtn").click();
+            }
+          });
+          //store in teacher array
+          teacher = [];
+          function getTeacher() {
+            t = document.getElementById("myInput").value;
+            teacher.push(t);
+            document.getElementById("name").innerHTML = teacher;
+            document.getElementById("myInput").value = "";
+          }
+        </script>
+      </div>
+      <div>
+        <center>
+          <a href="try.html" target="_blank">
+            <button id="gen" type="submit">
+              Generate
+            </button>
+          </a>
+        </center>
+      </div>
+    </section>
+  </body>
+</html>
