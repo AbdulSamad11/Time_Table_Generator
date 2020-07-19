@@ -12,15 +12,15 @@ rooms = ["1.1", "1.2"];
 n = rooms.length;
 coursesNames = ["aoa", "db", "os", "taf", "mc"];
 k = coursesNames.length;
-lectures = ["2+1", "3+1", "1+1+1", "2+2", "3"];
+lectures = ["2+1", "2+1", "1+1+1", "2+2", "3"];
 function teachers(name) {
   this.name = name;
   this.avail = [
-    [true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true],
-    [true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
   ];
 }
 
@@ -34,8 +34,12 @@ while (c < m) {
 
 function getTeacherInd(name) {
   tr = 0;
-  while (t_name != t[tr].name) tr++;
+  while (name != t[tr].name) tr++;
   return tr;
+}
+
+function getCreditHour(ml) {
+  courses[ml].lectures--;
 }
 
 function course(name, teach, classes) {
@@ -43,26 +47,48 @@ function course(name, teach, classes) {
   this.teach = teach;
   this.classes = classes;
   this.meetTimes = 0;
+  this.pointer = 0;
+  this.lectures = 0;
+  this.classess = [];
 }
 
 c = 0;
 courses = [];
 while (c < k) {
   a = new course(coursesNames[c], teacher[c], lectures[c]);
-  courses.push(a);
   for (let index = 0; index < a.classes.length; index += 2) {
     a.meetTimes += parseInt(a.classes[index]);
+    a.classess.push(parseInt(a.classes[index]));
+    a.lectures++;
   }
+  courses.push(a);
   total_classes += a.meetTimes;
   c++;
 }
 schedule = [
-  ["none", "none", "none", "none", "none", "none", "none"],
-  ["none", "none", "none", "none", "none", "none", "none"],
-  ["none", "none", "none", "none", "none", "none", "none"],
-  ["none", "none", "none", "none", "none", "none", "none"],
-  ["none", "none", "none", "none", "none", "none", "none"],
+  ["none", "none", "none", "none", "break", "none", "none", "none"],
+  ["none", "none", "none", "none", "break", "none", "none", "none"],
+  ["none", "none", "none", "none", "break", "none", "none", "none"],
+  ["none", "none", "none", "none", "break", "none", "none", "none"],
+  ["none", "none", "none", "none", "break", "none", "none", "none"],
 ];
+
+function validateExit() {
+  flag = true;
+  for (i = 0; i < k; i++)
+    if (courses[i].pointer < courses[i].lectures) {
+      flag = false;
+    }
+  return flag;
+}
+
+function getCreditHour(current_subj) {
+  if (courses[current_subj].pointer < courses[current_subj].lectures) {
+    return courses[current_subj].classess[courses[current_subj].pointer++];
+  } else {
+    return 0;
+  }
+}
 
 function generate() {
   t_name = "";
@@ -84,12 +110,7 @@ function generate() {
     day++;
     for (hour = 0; hour < w_hours; hour++) {
       if (credit_h == true) {
-        if (pointer < courses[current_subj].classes.length) {
-          ch = courses[current_subj].classes[pointer];
-          pointer += 2;
-        } else {
-          ch = 0;
-        }
+        ch = getCreditHour(current_subj);
         credit_h = false;
       }
       if (hour + ch > w_hours) {
@@ -102,23 +123,30 @@ function generate() {
 
       c_name = courses[current_subj].name;
       t_name = courses[current_subj].teach;
-      current_teach = courses[current_subj].getTeacherInd(t_name);
+      current_teach = getTeacherInd(t_name);
       t_name = t[current_teach].name;
 
-      if (ch > 0 && t[current_teach].avail[day][hour]) {
+      if (ch > 0 && t[current_teach].avail[day][hour] == true) {
         schedule[day][hour] = courses[current_subj].name;
         t[current_teach].avail[day][hour] = false;
         ch--;
         continue;
       } else if (classes == 0) {
         console.table(schedule);
-        return;
+        if (validateExit()) {
+          return;
+        } else {
+          classes++;
+          current_subj = 0;
+          continue;
+        }
       } else {
         classes--;
-        if (ch > 0) {
-          // && courses[current_subj].pointer == c[current_subj].meetTimes) {
-          //           classes++;
-          //            c[0].pointer;
+        if (
+          ch > 0 &&
+          courses[current_subj].pointer == courses[current_subj].lectures
+        ) {
+          classes++;
         } else if (current_subj < k - 1) {
           current_subj++;
         } else if (current_subj == k - 1) {
