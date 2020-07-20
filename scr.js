@@ -10,7 +10,7 @@ teacher = ["samyan", "atif", "talia", "tauqeer", "rubina"];
 m = teacher.length;
 rooms = ["1.1", "1.2"];
 n = rooms.length;
-coursesNames = ["aoa", "db", "os", "taf", "mc"];
+coursesNames = ["algorithms", "database systems", "operating systems", "theory of automata", "multivariable calculus"];
 k = coursesNames.length;
 lectures = ["3+3+3", "3+3+3", "3+3+3", "3+3+3", "3+3+3"];
 function teachers(name) {
@@ -133,13 +133,16 @@ function generate() {
         continue;
       } else if (classes == 0) {
         console.table(schedule);
-        document.write(
-          "<center></br></br> <table><tr><th>8-9</th><th>9-10</th><th>10-11</th><th>11-12</th><th>12-1</th><th>1-2</th><th>2-3</th><th>3-4</th></tr ></table ></center >"
-        );
         for (index = 0; index < 5; index++) {
           index1 = 0;
+
+          if (index == 0) {
+            document.write(
+              "</br></br></br><table width='100%' textalign='center' cellspacing='0' cellpadding='20px'><tr><th>8-9</th><th>9-10</th><th>10-11</th><th>11-12</th><th>12-1</th><th>1-2</th><th>2-3</th><th>3-4</th></tr>"
+            );
+          }
           document.write(
-            "<center> <table> <tr> <td>" +
+            "<table width='100%' text-align='center' border='1' cellspacing='0' cellpadding='8px'><tr><td>" +
               schedule[index][index1++] +
               "</td ><td >" +
               schedule[index][index1++] +
@@ -155,7 +158,7 @@ function generate() {
               schedule[index][index1++] +
               "</td> <td >" +
               schedule[index][index1++] +
-              "</td> </tr> </table > </center>"
+              "</td> </tr> </table ></center>"
           );
         }
         if (validateExit()) {
@@ -186,30 +189,32 @@ function generate() {
 
     if (day == w_days - 1) {
       console.table(schedule);
-      document.write(
-        "<center> <table><tr><th>8-9</th><th>9-10</th><th>10-11</th><th>11-12</th><th>12-1</th><th>1-2</th><th>2-3</th><th>3-4</th></tr ></table ></center >"
-      );
       for (index = 0; index < 5; index++) {
         index1 = 0;
 
+        if (index == 0) {
+          document.write(
+            "</br></br></br><table width='100%' textalign='center' cellspacing='0' cellpadding='20px'><tr><th>8-9</th><th>9-10</th><th>10-11</th><th>11-12</th><th>12-1</th><th>1-2</th><th>2-3</th><th>3-4</th></tr>"
+          );
+        }
         document.write(
-          "<center> <table> <tr> <td>" +
-            schedule[index][index1++] +
-            "</td ><td >" +
-            schedule[index][index1++] +
-            "</td> <td >" +
-            schedule[index][index1++] +
-            "</td> <td >" +
-            schedule[index][index1++] +
-            "</td> <td >" +
-            schedule[index][index1++] +
-            "</td> <td >" +
-            schedule[index][index1++] +
-            "</td> <td >" +
-            schedule[index][index1++] +
-            "</td> <td >" +
-            schedule[index][index1++] +
-            "</td> </tr> </table > </center>"
+          "<table width='100%' text-align='center' border='1' cellspacing='0' cellpadding='8px'><tr><td>" +
+          schedule[index][index1++] +
+          "</td ><td >" +
+          schedule[index][index1++] +
+          "</td> <td >" +
+          schedule[index][index1++] +
+          "</td> <td >" +
+          schedule[index][index1++] +
+          "</td> <td >" +
+          schedule[index][index1++] +
+          "</td> <td >" +
+          schedule[index][index1++] +
+          "</td> <td >" +
+          schedule[index][index1++] +
+          "</td> <td >" +
+          schedule[index][index1++] +
+          "</td> </tr> </table ></center>"
         );
       }
       day = -1;
