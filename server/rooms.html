@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scr.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <nav>
+        <input type="checkbox" name="" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Abdul Samad</label>
+        <ul>
+          <li><a href="/">HOURS</a></li>
+          <li><a href="./rooms.html" class="active">ROOMS</a></li>
+          <li><a href="./courses.html">COURSES</a></li>
+          <li><a href="./teachers.html">TEACHERS</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="sec">
+      <div class="inp">
+        <input
+          id="myInput"
+          type="text"
+          name=""
+          placeholder="Enter Room Names"
+        />
+        <button id="myBtn" type="submit" onclick="getRoom()">ADD</button>
+        <p id="name"></p>
+        <script>
+          var input = document.getElementById("myInput");
+          input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+              event.preventDefault();
+              document.getElementById("myBtn").click();
+            }
+          });
+
+          rooms = [];
+          function getRoom() {
+            roomName = document.getElementById("myInput").value;
+            rooms.push(roomName);
+            document.getElementById("name").innerHTML = rooms;
+            document.getElementById("myInput").value = "";
+          }
+        </script>
+      </div>
+    </section>
+  </body>
+</html>
