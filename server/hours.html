@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
     <link rel="stylesheet" href="style.css" />
+    <script src="hour.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
@@ -16,7 +16,7 @@
         <label for="check" class="checkbtn">
           <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">Abdul Samad</label>
+        <label class="logo">TimeTable Generator</label>
         <ul>
           <li><a href="/" class="active">HOURS</a></li>
           <li><a href="./rooms.html">ROOMS</a></li>
@@ -27,11 +27,11 @@
     </div>
     <section class="sec">
       <div class="inp" id="in">
+        <label for="wh">Working hours</label>
         <input
           type="number"
-          name=""
+          name="wh"
           id="myInput"
-          value="8"
           placeholder="Daily Working Hours"
         />
         <button id="myBtn" type="submit" onclick="getHour()">ADD</button>
@@ -45,15 +45,25 @@
             }
           });
           //
-          var w_hours;
-          function getHour() {
-            hour = document.getElementById("myInput").value;
-            document.getElementById("name").innerHTML =
-              "Daily working hours are " + w_hours;
-            document.getElementById("myInput").value = "";
-          }
         </script>
       </div>
+
+      <div class="inp" id="in">
+        <label for="in">Break Period</label>
+        <input type="number" name="in" id="break" value="" id="input" />
+        <button id="Btn" type="submit" onclick="getBreak()">ADD</button>
+        <p id="write"></p>
+        <script>
+          var input = document.getElementById("break");
+          input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+              event.preventDefault();
+              document.getElementById("Btn").click();
+            }
+          });
+        </script>
+      </div>
+      <a href="./rooms.html"><h3 id="next">NEXT</h3></a>
     </section>
   </body>
 </html>

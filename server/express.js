@@ -4,7 +4,7 @@ var path = require("path");
 
 const app = express();
 app.use(express.static("public"));
-app.use("/static", express.static("public"));
+app.get("/static", express.static("public"));
 app.get("/", function (req, res) {
   res.sendfile("hours.html");
 });

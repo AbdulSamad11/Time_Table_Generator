@@ -120,10 +120,26 @@ nav {
   padding: 15x;
   padding-top: 10px;
   padding-bottom: 100px;
-  background-color: rgb(41, 109, 165);
+  /* background-color: rgb(41, 109, 165); */
 }
 
 button {
   background-color: rgb(106, 143, 38);
   padding: 1px;
+}
+
+#prev {
+  float: left;
+}
+#next {
+  float: right;
+}
+#next,
+#prev {
+  padding: 10px;
+  border: 1px solid darkblue;
+  background-color: rgb(70, 70, 245);
+  border-radius: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
 }

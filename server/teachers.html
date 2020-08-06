@@ -6,7 +6,7 @@
     <title>Project</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="style.css" />
-
+    <script src="teacher.js"></script>
     <style>
       #gen {
         width: 100%;
@@ -18,7 +18,6 @@
       #gen:hover {
         background-color: darkslategray;
       }
-      
     </style>
   </head>
 
@@ -29,7 +28,7 @@
         <label for="check" class="checkbtn">
           <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">Abdul Samad</label>
+        <label class="logo">TimeTable Generator</label>
         <ul>
           <li><a href="/">HOURS</a></li>
           <li><a href="rooms.html">ROOMS</a></li>
@@ -40,15 +39,12 @@
     </div>
     <section class="sec">
       <div class="inp">
-        <input
-          type="text"
-          name=""
-          id="myInput"
-          placeholder="Enter Teacher names"
-        />
+        <label for="myInput">Enter teacher names</label>
+        <input type="text" name="" id="myInput" placeholder="Hitler" />
         <button id="myBtn" type="submit" onclick="getTeacher()">ADD</button>
-        <button id="myBtn" type="submit" onclick="getTeacherr()">show</button>
+        <button id="myBtn" type="submit" onclick="showTeacherr()">show</button>
         <p id="name"></p>
+
         <script>
           var input = document.getElementById("myInput");
           input.addEventListener("keyup", function (event) {
@@ -58,14 +54,8 @@
             }
           });
           //store in teacher array
-          teacher = [];
-          function getTeacher() {
-            t = document.getElementById("myInput").value;
-            teacher.push(t);
-            document.getElementById("name").innerHTML = teacher;
-            document.getElementById("myInput").value = "";
-          }
         </script>
+          
       </div>
       <div style="background-color: cornflowerblue;">
         <center>
@@ -75,7 +65,10 @@
             </button>
           </a>
         </center>
+        
       </div>
+      <a href="./courses.html">
+        <h3 id="prev">prev</h3>
     </section>
   </body>
 </html>

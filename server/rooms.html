@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    
+    <script src="room.js"></script>
   </head>
 
   <body>
@@ -16,7 +16,7 @@
         <label for="check" class="checkbtn">
           <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">Abdul Samad</label>
+        <label class="logo">TimeTable Generator</label>
         <ul>
           <li><a href="/">HOURS</a></li>
           <li><a href="./rooms.html" class="active">ROOMS</a></li>
@@ -27,13 +27,16 @@
     </div>
     <section class="sec">
       <div class="inp">
+        <label for="rm">Room Names </label>
         <input
           id="myInput"
           type="text"
-          name=""
+          name="rm"
           placeholder="Enter Room Names"
         />
         <button id="myBtn" type="submit" onclick="getRoom()">ADD</button>
+        <button type="submit" id="myBtn" onclick="showRooms()">SHOW</button>
+        <button type="reset" id="myBtn" onclick="resetRooms()">RESET</button>
         <p id="name"></p>
         <script>
           var input = document.getElementById("myInput");
@@ -43,16 +46,18 @@
               document.getElementById("myBtn").click();
             }
           });
-
-          rooms = [];
-          function getRoom() {
-            roomName = document.getElementById("myInput").value;
-            rooms.push(roomName);
-            document.getElementById("name").innerHTML = rooms;
-            document.getElementById("myInput").value = "";
-          }
         </script>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <a href="/">
+        <h3 id="prev">prev</h3>
+      </a>
+      <a href="./courses.html">
+        <h3 id="next">next</h3>
+      </a>
     </section>
   </body>
 </html>
