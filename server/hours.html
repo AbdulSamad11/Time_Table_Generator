@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
+
     <script src="hour.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,16 +26,13 @@
         </ul>
       </nav>
     </div>
-    <section class="sec">
+    <section class="sec" id="hourCss">
       <div class="inp" id="in">
         <label for="wh">Working hours</label>
-        <input
-          type="number"
-          name="wh"
-          id="myInput"
-          placeholder="Daily Working Hours"
-        />
+        <input type="number" name="wh" id="myInput" placeholder="8" />
         <button id="myBtn" type="submit" onclick="getHour()">ADD</button>
+        <button id="myBtn" type="submit" onclick="showHour()">show</button>
+        <button type="reset" id="myBtn" onclick="resetHour()">RESET</button>
         <p id="name"></p>
         <script>
           var input = document.getElementById("myInput");
@@ -48,13 +46,55 @@
         </script>
       </div>
 
-      <div class="inp" id="in">
+      <div class="inp2" id="in">
         <label for="in">Break Period</label>
-        <input type="number" name="in" id="break" value="" id="input" />
+        <input
+          type="number"
+          name="in"
+          id="break"
+          value=""
+          id="input"
+          placeholder="4"
+        />
         <button id="Btn" type="submit" onclick="getBreak()">ADD</button>
+        <button id="myBtn" type="submit" onclick="showBreak()">show</button>
+        <button type="reset" id="myBtn" onclick="resetBreak()">RESET</button>
         <p id="write"></p>
         <script>
           var input = document.getElementById("break");
+          input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+              event.preventDefault();
+              document.getElementById("Btn").click();
+            }
+          });
+        </script>
+      </div>
+      <div
+        class="inp3"
+        id="innn"
+        style="
+          @media (min-width: 859px;) {
+            margin-top: 100px;
+            position: relative;
+            display: inline-block;
+          }
+        "
+      >
+        <label for="in">Start Hour</label>
+        <input
+          type="number"
+          name="in"
+          id="startHour"
+          value=""
+          placeholder="8"
+        />
+        <button id="Btn" type="submit" onclick="getStart()">ADD</button>
+        <button id="myBtn" type="submit" onclick="showStart()">show</button>
+        <button type="reset" id="myBtn" onclick="resetStart()">RESET</button>
+        <p id="writeHour"></p>
+        <script>
+          var input = document.getElementById("startHour");
           input.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
               event.preventDefault();

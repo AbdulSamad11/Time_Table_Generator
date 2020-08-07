@@ -7,7 +7,6 @@ function getRoom() {
   document.getElementById("myInput").value = "";
 }
 
-
 function showRooms() {
   rooms = localStorage.getItem("roomNames").split(",");
   fLen = rooms.length;
@@ -21,7 +20,6 @@ function showRooms() {
 }
 function resetRooms() {
   rooms = "";
-  localStorage.setItem("roomNames", rooms);
+  localStorage.removeItem("roomNames");
   document.getElementById("name").innerHTML = "";
-  showCourse();
 }

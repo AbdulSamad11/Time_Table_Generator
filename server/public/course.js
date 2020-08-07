@@ -4,7 +4,7 @@ function getCourse() {
   Name = document.getElementById("myInput").value;
   coursesNames.push(Name);
   localStorage.setItem("course", coursesNames);
-  // document.getElementById("name").innerHTML = coursesNames;
+  //  document.getElementById("name").innerHTML = coursesNames;
   document.getElementById("myInput").value = "";
 }
 
@@ -46,8 +46,8 @@ function showLectures() {
   document.getElementById("name1").innerHTML = text;
 }
 function resetLectures() {
-  lectures = "";
-  localStorage.setItem("lectures", lectures);
+  lectures = [];
+  localStorage.removeItem("lectures");
   document.getElementById("name1").innerHTML = "";
-  showCourse();
+  showLectures();
 }

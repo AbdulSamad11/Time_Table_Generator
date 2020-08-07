@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="room.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
@@ -26,7 +27,7 @@
       </nav>
     </div>
     <section class="sec">
-      <div class="inp">
+      <div class="inp" id="room">
         <label for="rm">Room Names </label>
         <input
           id="myInput"
@@ -37,7 +38,7 @@
         <button id="myBtn" type="submit" onclick="getRoom()">ADD</button>
         <button type="submit" id="myBtn" onclick="showRooms()">SHOW</button>
         <button type="reset" id="myBtn" onclick="resetRooms()">RESET</button>
-        <p id="name"></p>
+        <p id="name">aSasaS</p>
         <script>
           var input = document.getElementById("myInput");
           input.addEventListener("keyup", function (event) {

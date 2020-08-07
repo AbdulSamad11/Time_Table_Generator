@@ -7,18 +7,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="teacher.js"></script>
-    <style>
-      #gen {
-        width: 100%;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border: none;
-        background-color: cornflowerblue;
-      }
-      #gen:hover {
-        background-color: darkslategray;
-      }
-    </style>
+  
   </head>
 
   <body>
@@ -40,9 +29,10 @@
     <section class="sec">
       <div class="inp">
         <label for="myInput">Enter teacher names</label>
-        <input type="text" name="" id="myInput" placeholder="Hitler" />
+        <input type="text" name="" id="myInput" placeholder="Striker" />
         <button id="myBtn" type="submit" onclick="getTeacher()">ADD</button>
         <button id="myBtn" type="submit" onclick="showTeacherr()">show</button>
+        <button type="reset" id="myBtn" onclick="resetTeacher()">RESET</button>
         <p id="name"></p>
 
         <script>
@@ -57,14 +47,15 @@
         </script>
           
       </div>
-      <div style="background-color: cornflowerblue;">
+      <a href="try.html" target="_blank">
+        <button style="display: inline-block; position: fixed; bottom: 200px;" id="gen" type="submit">
+          Generate
+        </button>
+      </a>
+      <!-- <div style="background-color: cornflowerblue;">
         <center>
-          <a href="try.html" target="_blank">
-            <button id="gen" type="submit">
-              Generate
-            </button>
-          </a>
-        </center>
+         
+        </center> -->
         
       </div>
       <a href="./courses.html">

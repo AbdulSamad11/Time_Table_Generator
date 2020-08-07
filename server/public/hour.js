@@ -17,3 +17,32 @@ function getBreak() {
   // document.getElementById("break").value = "";
 }
 // document.write(hour + 10);
+function getStart() {
+  startHour = document.getElementById("startHour").value;
+  localStorage.setItem("startHour", startHour);
+  document.getElementById("writeHour").innerHTML =
+    "Working Hour will start from: " + startHour;
+}
+function showHour() {
+  document.getElementById("name").innerHTML = localStorage.getItem("w_hour");
+}
+function resetHour() {
+  localStorage.removeItem("w_hour");
+  document.getElementById("name").innerHTML = "";
+  showHour();
+}
+function showBreak() {
+  document.getElementById("write").innerHTML = localStorage.getItem("breakk");
+}
+function resetBreak() {
+  localStorage.removeItem("breakk");
+  document.getElementById("write").innerHTML = "";
+  showBreak();
+}
+function showStart() {
+  document.getElementById("writeHour").innerHTML = localStorage.getItem("startHour");
+}
+function resetStart() {
+  localStorage.removeItem("startHour");
+  showStart();
+}

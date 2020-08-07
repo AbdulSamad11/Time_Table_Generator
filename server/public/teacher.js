@@ -3,7 +3,7 @@ function getTeacher() {
   t = document.getElementById("myInput").value;
   teacher.push(t);
   localStorage.setItem("teacher", teacher);
-  document.getElementById("name").innerHTML = teacher;
+  //  document.getElementById("name").innerHTML = teacher;
   document.getElementById("myInput").value = "";
 }
 
@@ -18,4 +18,12 @@ function showTeacherr() {
   text += "</ul>";
 
   document.getElementById("name").innerHTML = text;
+}
+
+function resetTeacher() {
+  teacher=[];
+  localStorage.removeItem("teacher");
+  document.getElementById("name").innerHTML = "";
+  showTeacherr();
+  // showCourse();
 }

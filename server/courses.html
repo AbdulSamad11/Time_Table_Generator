@@ -32,18 +32,21 @@
         <button type="submit" id="myBtn" onclick="getCourse()">ADD</button>
         <button type="submit" id="myBtn" onclick="showCourse()">SHOW</button>
         <button type="reset" id="myBtn" onclick="resetCourse()">RESET</button>
-        <span id="name"></span>
+        <div>
+        <p id="name" style="text-align: center;"></p>
+        </div>
       </div>
-      <center>
-        <!-- next button -->
-        <label for="text">Enter Hours</label>
-        <input type="text" id="myInput1" name="" placeholder="3+1" />
-        <button type="submit" id="myBtn1" onclick="getLectures()">ADD</button>
-        <button type="submit" id="myBtn" onclick="showLectures()">SHOW</button>
-        <button type="reset" id="myBtn" onclick="resetLectures()">RESET</button>
-        <span id="name1"></span>
-      </center>
-
+        
+        <div class="inp2">
+          <!-- next button -->
+          <label for="text">Enter lectures</label>
+          <input type="text" id="myInput1" name="" placeholder="3+1" />
+          <button type="submit" id="myBtn1" onclick="getLectures()">ADD</button>
+          <button type="submit" id="myBtn" onclick="showLectures()">SHOW</button>
+          <button type="reset" id="myBtn" onclick="resetLectures()">RESET</button>
+          <span id="name1"></span>
+        </div>
+          
       <script>
         var input = document.getElementById("myInput");
         input.addEventListener("keyup", function (event) {
@@ -64,10 +67,10 @@
       <br />
       <br />
       <a href="./rooms.html">
-        <h3 id="prev">NEXT</h3>
+        <span id="prev">prev<span>
       </a>
       <a href="./teachers.html">
-        <h3 id="next">NEXT</h3>
+        <span id="next">next</span>
       </a>
     </section>
   </body>
