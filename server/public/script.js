@@ -1,1 +1,534 @@
-const _0x36b3=['meetTimes','sch','avail','log','availSingleHour','teach','write','startHour','</table>','table','split','w_hour','lectures','availMultipleSlots','</tr>','none','availSingleDay','push','classess','classes','availSingleSlot','pointer','<th>','</br>','length','<td>','course','teacher','break','<tr>','roomNames','getItem','name','<table>'];(function(_0x78ba5b,_0x36b3f2){const _0x4a730e=function(_0x2ddfe9){while(--_0x2ddfe9){_0x78ba5b['push'](_0x78ba5b['shift']());}};_0x4a730e(++_0x36b3f2);}(_0x36b3,0x83));const _0x4a73=function(_0x78ba5b,_0x36b3f2){_0x78ba5b=_0x78ba5b-0x0;let _0x4a730e=_0x36b3[_0x78ba5b];return _0x4a730e;};w_hours=parseInt(localStorage[_0x4a73('0x2')](_0x4a73('0x10')));let break_period=parseInt(localStorage['getItem']('breakk'))-0x1;total_classes=0x0,w_days=0x5,teacher=localStorage[_0x4a73('0x2')](_0x4a73('0x20'))['split'](','),rooms=localStorage[_0x4a73('0x2')](_0x4a73('0x1'))[_0x4a73('0xf')](','),courses=localStorage[_0x4a73('0x2')](_0x4a73('0x1f')),coursesNames=courses[_0x4a73('0xf')](','),m=teacher[_0x4a73('0x1d')],n=rooms[_0x4a73('0x1d')],k=coursesNames[_0x4a73('0x1d')];n==0x0&&exit(0x0);let maxPeriod=break_period,maxed=w_hours-break_period-0x1;if(maxed>maxPeriod)maxPeriod=maxed;lectures=[],lectures=localStorage[_0x4a73('0x2')](_0x4a73('0x11'))[_0x4a73('0xf')](',');function teachers(_0x6d2e3a){this[_0x4a73('0x3')]=_0x6d2e3a,this[_0x4a73('0x7')]=[[!![],!![],!![],!![],!![],!![],!![],!![]],[!![],!![],!![],!![],!![],!![],!![],!![]],[!![],!![],!![],!![],!![],!![],!![],!![]],[!![],!![],!![],!![],!![],!![],!![],!![]],[!![],!![],!![],!![],!![],!![],!![],!![]]];}function Table(){this[_0x4a73('0x6')]=new Array(w_hours);for(let _0xb7d011=0x0;_0xb7d011<w_days;_0xb7d011++){this[_0x4a73('0x6')][_0xb7d011]=new Array(w_days);}for(var _0x25ff58=0x0;_0x25ff58<w_days;_0x25ff58++)for(var _0x1b3423=0x0;_0x1b3423<w_hours;_0x1b3423++){if(_0x1b3423!=break_period)this[_0x4a73('0x6')][_0x25ff58][_0x1b3423]=_0x4a73('0x14');else this[_0x4a73('0x6')][_0x25ff58][_0x1b3423]=_0x4a73('0x21');}this[_0x4a73('0x19')]=![],this[_0x4a73('0x12')]=![],this[_0x4a73('0x15')]=0x0,this[_0x4a73('0x9')]=0x0;}tab=new Array(n);for(let index=0x0;index<n;index++){a=new Table(),tab[index]=a;}function set(_0xdea5ea,_0x22549d,_0x1e5347,_0x59db84){tab[_0xdea5ea][_0x4a73('0x6')][_0x22549d][_0x1e5347]=_0x59db84;}function availSingle(_0x3c8e02,_0x5f0021,_0x1b0790){tab[_0x3c8e02][_0x4a73('0x15')]=_0x5f0021,tab[_0x3c8e02]['availSingleHour']=_0x1b0790;}function ifAvailSingle(_0xb01572){return tab[_0xb01572]['availSingleSlot'];}function setSingle(_0x3765d9){tab[_0x3765d9][_0x4a73('0x19')]=!![];}function desetSingle(_0x36fbed){tab[_0x36fbed][_0x4a73('0x19')]=![];}function getSingleDay(_0x498510){return tab[_0x498510][_0x4a73('0x15')];}function getSingleHour(_0x3fa6d){return tab[_0x3fa6d]['availSingleHour'];}t=[],c=0x0;while(c<m){a=new teachers(teacher[c]),t['push'](a),c++;}function getTeacherInd(_0x3932ba){tr=0x0;while(_0x3932ba!=t[tr][_0x4a73('0x3')])tr++;return tr;}function getCreditHour(_0x4a6ce0){courses[_0x4a6ce0][_0x4a73('0x11')]--;}function course(_0x52809f,_0x4348ba,_0x1e5542){this[_0x4a73('0x3')]=_0x52809f,this[_0x4a73('0xa')]=_0x4348ba,this[_0x4a73('0x18')]=_0x1e5542,this[_0x4a73('0x5')]=0x0,this[_0x4a73('0x1a')]=0x0,this[_0x4a73('0x11')]=0x0,this[_0x4a73('0x17')]=[];}c=0x0;let lecNo=0x0;courses=[];while(c<k){lecNo++,a=new course(coursesNames[c],teacher[c],lectures[c]);if(lecNo<localStorage['getItem']('lectures')[_0x4a73('0xf')](',')[_0x4a73('0x1d')]+0x1)aa=lectures[c][_0x4a73('0x1d')];else aa=0x0;for(let index=0x0;index<aa;index+=0x2){a[_0x4a73('0x5')]+=parseInt(a[_0x4a73('0x18')][index]),lecc=parseInt(a[_0x4a73('0x18')][index]);if(lecc<=maxPeriod)a[_0x4a73('0x17')][_0x4a73('0x16')](lecc);else{}a[_0x4a73('0x11')]++;}courses[_0x4a73('0x16')](a),total_classes+=a[_0x4a73('0x5')],c++;}schedule=new Array(w_days);for(let index=0x0;index<w_days;index++){schedule[index]=new Array(w_hours);}function validateExit(){flag=!![];for(i=0x0;i<k;i++)courses[i]['pointer']<courses[i]['lectures']&&(flag=![]);return flag;}function getCreditHour(_0x3369ab){return courses[_0x3369ab][_0x4a73('0x1a')]<courses[_0x3369ab][_0x4a73('0x11')]?courses[_0x3369ab][_0x4a73('0x17')][courses[_0x3369ab][_0x4a73('0x1a')]++]:0x0;}function ifAvail(_0x4e6a79,_0x2b196a,_0x458efc,_0x1b5962){for(let _0x20ae6d=0x0;_0x20ae6d<_0x1b5962;_0x20ae6d++){if(t[_0x4e6a79]['avail'][_0x2b196a][_0x458efc+_0x20ae6d]==![])return![];}return!![];}let allocated=0x0;function init(){for(var _0x118012=0x0;_0x118012<w_days;_0x118012++)for(var _0x42adf3=0x0;_0x42adf3<w_hours;_0x42adf3++){if(_0x42adf3!=break_period)schedule[_0x118012][_0x42adf3]=_0x4a73('0x14');else schedule[_0x118012][_0x42adf3]=_0x4a73('0x21');}}function show(_0x4eb895,_0x353543){let _0x1a9f5f=localStorage[_0x4a73('0x2')](_0x4a73('0xc')),_0x3a4696='';_0x3a4696+=_0x4a73('0x0');for(let _0x3011f6=0x0;_0x3011f6<w_hours;_0x3011f6++){_0x1a9f5f==0xd&&(_0x1a9f5f=0x1);if(_0x1a9f5f+0x1==0xd)_0x3a4696+=_0x4a73('0x1b')+_0x1a9f5f++ +'-'+0x1+'</th>';else _0x3a4696+=_0x4a73('0x1b')+_0x1a9f5f++ +'-'+_0x1a9f5f+'</th>';}_0x3a4696+='</tr\x20>';for(let _0x28e294=0x0;_0x28e294<w_days;_0x28e294++){_0x3a4696+='<tr>';for(let _0x4275e2=0x0;_0x4275e2<w_hours;_0x4275e2++){_0x3a4696+=_0x4a73('0x1e')+tab[_0x4eb895][_0x4a73('0x6')][_0x28e294][_0x4275e2]+'</td>';}_0x3a4696+=_0x4a73('0x13');}document[_0x4a73('0xb')](_0x4a73('0x1c')),document['write']('<center>\x20<h3>ROOM--'+rooms[_0x353543]+'</h3></center>'),document[_0x4a73('0xb')](_0x4a73('0x1c')),document[_0x4a73('0xb')](_0x4a73('0x4')+_0x3a4696+_0x4a73('0xd')),document[_0x4a73('0xb')](_0x4a73('0x1c')),document[_0x4a73('0xb')](_0x4a73('0x1c')),document[_0x4a73('0xb')](_0x4a73('0x1c')),_0x3a4696='';}function generate(){t_name='',c_name='';let _0x333777=0x0,_0x168b6d=0x0,_0x4dda2f=0x0,_0x487ebd=0x0,_0x3d07c9=!![],_0x26d1d1=total_classes,_0x4c706c=0x0,_0x282b3d=0x0,_0x51a948=!![],_0x16c40b=[0x0,0x0,0x0],_0x51098b=0x0,_0x11eee1=0x0,_0x4fb7e8=![],_0x29125c=[0x0,0x0],_0x26c686=![],_0x2f27b6=0x0,_0x14d831=!![],_0x45e4e5=-0x1,_0xd2e976=-0x1;if(total_classes==0x0)return;init();while(!![]){for(_0x4c706c=0x0;_0x4c706c<w_hours;_0x4c706c++){if(_0x4c706c==break_period)continue;_0x14d831=!![];if(_0x3d07c9==!![]){_0x26c686=!![],_0x487ebd=getCreditHour(_0x333777);_0x487ebd==0x0&&_0x26d1d1--;if(_0x487ebd>0x0&&_0x16c40b[0x0]==_0x487ebd&&ifAvail(_0x168b6d,_0x16c40b[0x1],_0x16c40b[0x2],_0x487ebd)==!![]&&schedule[_0x16c40b[0x1]][_0x16c40b[0x2]]=='none'){c_name=courses[_0x333777][_0x4a73('0x3')],t_name=courses[_0x333777][_0x4a73('0xa')],_0x168b6d=getTeacherInd(t_name),t_name=t[_0x168b6d][_0x4a73('0x3')];let _0x5303de=_0x16c40b[0x2];while(_0x487ebd>0x0){schedule[_0x16c40b[0x1]][_0x5303de]=courses[_0x333777][_0x4a73('0x3')],set(_0x2f27b6,_0x16c40b[0x1],_0x5303de,c_name),t[_0x168b6d]['avail'][_0x16c40b[0x1]][_0x5303de]=![],allocated++,_0x5303de++,_0x26d1d1--,_0x487ebd--;}_0x16c40b[0x0]=0x0,_0x16c40b[0x1]=0x0,_0x16c40b[0x2]=0x0,_0x51a948=!![],_0x51098b=0x0,_0x14d831=![];}if(_0x14d831==!![]){_0x3d07c9=![];if(_0x487ebd==0x1&&_0x2f27b6>0x0&&ifAvailSingle(_0x2f27b6-0x1)){c_name=courses[_0x333777][_0x4a73('0x3')],t_name=courses[_0x333777][_0x4a73('0xa')],_0x168b6d=getTeacherInd(t_name),t_name=t[_0x168b6d][_0x4a73('0x3')];let _0x10d603=getSingleDay(_0x2f27b6-0x1),_0x3af2e4=getSingleHour(_0x2f27b6-0x1);if(ifAvail(_0x168b6d,_0x10d603,_0x3af2e4,_0x487ebd))set(_0x2f27b6-0x1,_0x10d603,_0x3af2e4,c_name),desetSingle(_0x2f27b6-0x1),t[_0x168b6d][_0x4a73('0x7')][_0x10d603][_0x3af2e4]=![],_0x26d1d1--,allocated++,_0x487ebd--;else _0x4fb7e8=!![];}_0x487ebd==0x1&&(_0x4fb7e8=!![]);}}if(_0x14d831==!![]){_0x14d831=![];if(_0x4c706c<break_period&&_0x487ebd+_0x4c706c>break_period){0x4-_0x4c706c==0x1&&(_0x29125c[0x0]=_0x4dda2f,_0x29125c[0x1]=_0x4c706c);(_0x51a948||schedule[_0x16c40b[0x1]][_0x16c40b[0x2]]!=_0x4a73('0x14'))&&(_0x16c40b[0x0]=break_period-_0x4c706c,_0x16c40b[0x1]=_0x4dda2f,_0x16c40b[0x2]=_0x4c706c,_0x51a948=![]);_0x26c686=!![];continue;}if(_0x4c706c+_0x487ebd>w_hours&&_0x4dda2f==w_days-0x1){courses[_0x333777][_0x4a73('0x1a')]--;if(_0x333777<k-0x1)_0x333777++;else _0x333777==k-0x1&&(_0x333777=0x0);_0x3d07c9=!![],_0x4c706c--;continue;}if(_0x4c706c+_0x487ebd>w_hours){(_0x51a948==!![]||schedule[_0x16c40b[0x1]][_0x16c40b[0x2]]!=_0x4a73('0x14'))&&(_0x16c40b[0x0]=w_hours-_0x4c706c,_0x16c40b[0x1]=_0x4dda2f,_0x16c40b[0x2]=_0x4c706c);_0x51a948=![],_0x26c686=!![];continue;}c_name=courses[_0x333777][_0x4a73('0x3')],t_name=courses[_0x333777]['teach'],_0x168b6d=getTeacherInd(t_name),t_name=t[_0x168b6d][_0x4a73('0x3')];if(_0x4fb7e8==!![]&&_0x487ebd==0x1)for(let _0x857467=0x0;_0x857467<=_0x4dda2f;_0x857467++)for(let _0x9a3ace=0x0;_0x9a3ace<w_hours;_0x9a3ace++){if(_0x857467==_0x4dda2f&&_0x9a3ace==_0x4c706c){_0x9a3ace=0x14,_0x857467=0x14;continue;}schedule[_0x857467][_0x9a3ace]=='none'&&(schedule[_0x857467][_0x9a3ace-0x1]!=_0x4a73('0x14')||schedule[_0x857467][_0x9a3ace+0x1]!=_0x4a73('0x14')||schedule[_0x29125c[0x0]][_0x29125c[0x1]]!=_0x4a73('0x14'))&&(_0x29125c[0x0]=_0x857467,_0x29125c[0x1]=_0x9a3ace);}_0x26c686==!![]&&_0x4fb7e8==!![]&&_0x29125c[0x1]>0x0&&c_name!=schedule[_0x29125c[0x0]][_0x29125c[0x1]-0x1]&&_0x487ebd==0x1&&schedule[_0x29125c[0x0]][_0x29125c[0x1]]=='none'&&(schedule[_0x29125c[0x0]][_0x29125c[0x1]]=courses[_0x333777][_0x4a73('0x3')],set(_0x2f27b6,_0x29125c[0x0],_0x29125c[0x1],c_name),allocated++,t[_0x168b6d][_0x4a73('0x7')][_0x29125c[0x0]][_0x29125c[0x1]]=![],_0x26d1d1--,_0x487ebd--,_0x4fb7e8=![],_0x29125c[0x0]=0x0,_0x29125c[0x1]=0x0);}_0x14d831=!![];if(_0x487ebd>0x0&&ifAvail(_0x168b6d,_0x4dda2f,_0x4c706c,_0x487ebd)==!![]){_0x26c686=![],schedule[_0x4dda2f][_0x4c706c]=courses[_0x333777][_0x4a73('0x3')],set(_0x2f27b6,_0x4dda2f,_0x4c706c,c_name),t[_0x168b6d][_0x4a73('0x7')][_0x4dda2f][_0x4c706c]=![],_0x487ebd--,_0x26d1d1--,allocated++;continue;}else{if(_0x487ebd>0x0&&!ifAvail(_0x168b6d,_0x4dda2f,_0x4c706c,_0x487ebd)){courses[_0x333777]['pointer']--;if(_0x333777<k-0x1)_0x333777++;else _0x333777==k-0x1&&(_0x333777=0x0);_0x3d07c9=!![],_0x4c706c--;continue;}else{if(_0x26d1d1<=0x0){if(_0x11eee1>=n){show(_0x2f27b6,_0x11eee1++),console[_0x4a73('0xe')](schedule);return;}if(validateExit()){console[_0x4a73('0xe')](schedule),console[_0x4a73('0x8')](allocated),show(_0x2f27b6,_0x11eee1++);return;}else{_0x26d1d1=_0x26d1d1+k;_0x45e4e5==_0x4c706c&&_0xd2e976==0x2*_0x4dda2f&&_0x4c706c++;_0x45e4e5=_0x4c706c,_0xd2e976=_0x4dda2f,_0x4c706c--;continue;}}else{if(_0x487ebd>0x0&&courses[_0x333777][_0x4a73('0x1a')]==courses[_0x333777][_0x4a73('0x11')])_0x26d1d1=_0x26d1d1+k;else{if(_0x333777<k-0x1)_0x333777++;else _0x333777==k-0x1&&(_0x333777=0x0);}_0x3d07c9=!![],_0x4c706c--;}}}}if(_0x4dda2f==w_days-0x1){if(_0x11eee1==n){console['table'](schedule),show(_0x2f27b6,_0x11eee1++);return;}console[_0x4a73('0xe')](schedule),show(_0x2f27b6,_0x11eee1++),_0x4dda2f=0x0,_0x4c706c=0x0,schedule[_0x29125c[0x0]][_0x29125c[0x1]]==_0x4a73('0x14')&&(availSingle(_0x2f27b6,_0x29125c[0x0],_0x29125c[0x1]),setSingle(_0x2f27b6)),_0x29125c[0x0]=0x0,_0x29125c[0x1]=0x0,_0x16c40b[0x0]=0x0,_0x16c40b[0x1]=0x0,_0x16c40b[0x2]=0x0,_0x2f27b6++,init();}else _0x4dda2f++;}}
+//daily working hours is in.... hour
+//teachers list is in ...teacher
+//class room names are in ...rooms
+// course names are in coursesNames
+//break period is in breakk
+//import { exit } from "process";
+
+//lectures with weekly ch like 1+1+1,2+2z
+// let break_period = -1;
+// w_hours = 8;
+w_hours = parseInt(localStorage.getItem("w_hour"));
+let break_period = parseInt(localStorage.getItem("breakk")) - 1;
+total_classes = 0;
+w_days = 5;
+// teacher = ["talia", "tauqeer", "samyan", "rubina", "atif", "awais"];
+teacher = localStorage.getItem("teacher").split(",");
+rooms = localStorage.getItem("roomNames").split(",");
+courses = localStorage.getItem("course");
+// coursesNames = ["os", "taf", "aoa", "mc", "db", "dbase"];
+coursesNames = courses.split(",");
+
+m = teacher.length;
+n = rooms.length;
+k = coursesNames.length;
+
+//if rooms zero
+if (n == 0) {
+  exit(0);
+}
+
+//...........................will change as already implemented in breakk
+// break_period = Math.floor(w_hours / 2);
+
+//set maxed from left
+let maxPeriod = break_period;
+
+//set maxed from right
+let maxed = w_hours - break_period - 1;
+if (maxed > maxPeriod) maxPeriod = maxed;
+
+lectures = [];
+lectures = localStorage.getItem("lectures").split(",");
+
+function teachers(name) {
+  this.name = name;
+  this.avail = [
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+    [true, true, true, true, true, true, true, true],
+  ];
+}
+
+//setting tables
+function Table() {
+  this.sch = new Array(w_hours);
+  for (let index = 0; index < w_days; index++) {
+    this.sch[index] = new Array(w_days);
+  }
+  for (var i = 0; i < w_days; i++)
+    for (var j = 0; j < w_hours; j++) {
+      if (j != break_period) {
+        this.sch[i][j] = "none";
+      } else this.sch[i][j] = "break";
+    }
+
+  this.availSingleSlot = false;
+  this.availMultipleSlots = false;
+  this.availSingleDay = 0;
+  this.availSingleHour = 0;
+}
+
+tab = new Array(n);
+for (let index = 0; index < n; index++) {
+  a = new Table();
+  tab[index] = a;
+}
+
+function set(tabNo, day, hour, c_name) {
+  tab[tabNo].sch[day][hour] = c_name;
+}
+
+function availSingle(tabNo, day, hour) {
+  tab[tabNo].availSingleDay = day;
+  tab[tabNo].availSingleHour = hour;
+}
+
+function ifAvailSingle(tabNo) {
+  return tab[tabNo].availSingleSlot;
+}
+
+function setSingle(tabNo) {
+  tab[tabNo].availSingleSlot = true;
+}
+
+function desetSingle(tabNo) {
+  tab[tabNo].availSingleSlot = false;
+}
+
+function getSingleDay(tabNo) {
+  return tab[tabNo].availSingleDay;
+}
+
+function getSingleHour(tabNo) {
+  return tab[tabNo].availSingleHour;
+}
+
+t = [];
+c = 0;
+while (c < m) {
+  a = new teachers(teacher[c]);
+  t.push(a);
+  c++;
+}
+
+function getTeacherInd(name) {
+  tr = 0;
+  while (name != t[tr].name) tr++;
+  return tr;
+}
+
+function getCreditHour(ml) {
+  courses[ml].lectures--;
+}
+
+function course(name, teach, classes) {
+  this.name = name;
+  this.teach = teach;
+  this.classes = classes;
+  this.meetTimes = 0;
+  this.pointer = 0;
+  this.lectures = 0;
+  this.classess = [];
+}
+
+c = 0;
+let lecNo = 0;
+courses = [];
+while (c < k) {
+  lecNo++;
+  a = new course(coursesNames[c], teacher[c], lectures[c]);
+  if (lecNo < localStorage.getItem("lectures").split(",").length + 1)
+    aa = lectures[c].length;
+  else aa = 0;
+  // console.log(lectures[c].length);
+
+  for (let index = 0; index < aa; index += 2) {
+    a.meetTimes += parseInt(a.classes[index]);
+    lecc = parseInt(a.classes[index]);
+    if (lecc <= maxPeriod) a.classess.push(lecc);
+    else {
+    }
+    a.lectures++;
+  }
+  courses.push(a);
+  total_classes += a.meetTimes;
+  // if (a.meetTimes == 0) {
+  //   total_classes++;
+  // }
+  c++;
+}
+schedule = new Array(w_days);
+for (let index = 0; index < w_days; index++) {
+  schedule[index] = new Array(w_hours);
+}
+
+function validateExit() {
+  flag = true;
+  for (i = 0; i < k; i++)
+    if (courses[i].pointer < courses[i].lectures) {
+      flag = false;
+    }
+  return flag;
+}
+
+function getCreditHour(current_subj) {
+  if (courses[current_subj].pointer < courses[current_subj].lectures) {
+    return courses[current_subj].classess[courses[current_subj].pointer++];
+  } else {
+    return 0;
+  }
+}
+
+//for teacher
+function ifAvail(current_teach, i, j, h) {
+  for (let k = 0; k < h; k++) {
+    if (t[current_teach].avail[i][j + k] == false) {
+      return false;
+    }
+  }
+  return true;
+}
+let allocated = 0;
+
+function init() {
+  for (var i = 0; i < w_days; i++)
+    for (var j = 0; j < w_hours; j++) {
+      if (j != break_period) {
+        schedule[i][j] = "none";
+      } else schedule[i][j] = "break";
+    }
+}
+function show(tableNo, roomNo) {
+  let showHour = localStorage.getItem("startHour");
+  let table = "";
+  table += "<tr>";
+  for (let index = 0; index < w_hours; index++) {
+    if (showHour == 13) {
+      showHour = 1;
+    }
+    if (showHour + 1 == 13) {
+      table += "<th>" + showHour++ + "-" + 1 + "</th>";
+    } else table += "<th>" + showHour++ + "-" + showHour + "</th>";
+  }
+  table += "</tr >";
+
+  //table += "<tr><th>8-9</th><th>9-10</th><th>10-11</th><th>11-12</th><th>12-1</th><th>1-2</th><th>2-3</th><th>3-4</th></tr >";
+  for (let r = 0; r < w_days; r++) {
+    table += "<tr>";
+    for (let index = 0; index < w_hours; index++) {
+      // table += "<td>" + schedule[r][index] + "</td>";
+      table += "<td>" + tab[tableNo].sch[r][index] + "</td>";
+    }
+    table += "</tr>";
+  }
+  // console.log(tab[tableNo].sch);
+  document.write("</br>");
+  document.write("<center> <h3>ROOM--" + rooms[roomNo] + "</h3></center>");
+  document.write("</br>");
+  document.write("<table>" + table + "</table>");
+  document.write("</br>");
+  document.write("</br>");
+  document.write("</br>");
+  table = "";
+}
+
+function generate() {
+  t_name = "";
+  c_name = "";
+  let current_subj = 0; //to loop through all subjects
+  let current_teach = 0;
+  let day = 0;
+  let ch = 0;
+  let credit_h = true;
+  let classes = total_classes;
+  let hour = 0;
+  let room = 0;
+  let availTrack = true;
+  let track = [0, 0, 0];
+  let trackIndex = 0;
+  let roomNo = 0;
+  let fill = false;
+  let singles = [0, 0];
+  let current = false;
+  let tableNo = 0;
+  let tracked = true;
+  let loopHour = -1;
+  let loopDay = -1;
+
+  if (total_classes == 0) {
+    return;
+  }
+  init();
+  while (true) {
+    for (hour = 0; hour < w_hours; hour++) {
+      //validate break
+      if (hour == break_period) {
+        continue;
+      }
+      tracked = true;
+      if (credit_h == true) {
+        current = true;
+        ch = getCreditHour(current_subj); //change
+        if (ch == 0) {
+          classes--;
+          // if (current_subj == k - 1) current_subj = 0;
+          // else {
+          //   current_subj++;
+          //   credit_h = true;
+          //   hour--;
+          //   continue
+          // }
+        }
+        if (
+          ch > 0 &&
+          track[0] == ch &&
+          ifAvail(current_teach, track[1], track[2], ch) == true &&
+          schedule[track[1]][track[2]] == "none"
+        ) {
+          c_name = courses[current_subj].name;
+          t_name = courses[current_subj].teach;
+          current_teach = getTeacherInd(t_name);
+          t_name = t[current_teach].name;
+          let tempHour = track[2];
+          while (ch > 0) {
+            schedule[track[1]][tempHour] = courses[current_subj].name;
+
+            set(tableNo, track[1], tempHour, c_name);
+            t[current_teach].avail[track[1]][tempHour] = false;
+            allocated++;
+            tempHour++;
+            classes--;
+            ch--;
+          }
+          track[0] = 0;
+          track[1] = 0;
+          track[2] = 0;
+          availTrack = true;
+          trackIndex = 0;
+          tracked = false;
+        }
+
+        if (tracked == true) {
+          credit_h = false;
+
+          if (ch == 1 && tableNo > 0 && ifAvailSingle(tableNo - 1)) {
+            c_name = courses[current_subj].name;
+            t_name = courses[current_subj].teach;
+            current_teach = getTeacherInd(t_name);
+            t_name = t[current_teach].name;
+            let tempDay = getSingleDay(tableNo - 1);
+            let tempHour = getSingleHour(tableNo - 1);
+            if (ifAvail(current_teach, tempDay, tempHour, ch)) {
+              set(tableNo - 1, tempDay, tempHour, c_name);
+              desetSingle(tableNo - 1);
+              t[current_teach].avail[tempDay][tempHour] = false;
+              classes--;
+              allocated++;
+              ch--;
+            } else fill = true;
+          }
+          if (ch == 1) {
+            fill = true;
+          }
+        }
+      }
+      if (tracked == true) {
+        tracked = false;
+        if (hour < break_period && ch + hour > break_period) {
+          if (4 - hour == 1) {
+            singles[0] = day;
+            singles[1] = hour;
+          }
+          if (availTrack || schedule[track[1]][track[2]] != "none") {
+            track[0] = break_period - hour;
+            track[1] = day;
+            track[2] = hour;
+            availTrack = false;
+          }
+          current = true;
+          continue;
+        }
+
+        if (hour + ch > w_hours && day == w_days - 1) {
+          courses[current_subj].pointer--;
+          if (current_subj < k - 1) {
+            current_subj++;
+          } else if (current_subj == k - 1) {
+            current_subj = 0;
+          }
+          credit_h = true;
+          hour--;
+          continue;
+        }
+        //credit hour should not cross working hours
+        if (hour + ch > w_hours) {
+          if (availTrack == true || schedule[track[1]][track[2]] != "none") {
+            track[0] = w_hours - hour;
+            track[1] = day;
+            track[2] = hour;
+          }
+          availTrack = false;
+          current = true;
+          continue;
+        }
+
+        c_name = courses[current_subj].name;
+        t_name = courses[current_subj].teach;
+        current_teach = getTeacherInd(t_name);
+        t_name = t[current_teach].name;
+
+        if (fill == true && ch == 1) {
+          for (let i = 0; i <= day; i++)
+            for (let j = 0; j < w_hours; j++) {
+              if (i == day && j == hour) {
+                j = 20;
+                i = 20;
+                continue;
+              }
+              if (
+                schedule[i][j] == "none" &&
+                (schedule[i][j - 1] != "none" ||
+                  schedule[i][j + 1] != "none" ||
+                  schedule[singles[0]][singles[1]] != "none")
+              ) {
+                singles[0] = i;
+                singles[1] = j;
+              }
+            }
+        }
+
+        if (
+          current == true &&
+          fill == true &&
+          singles[1] > 0 &&
+          c_name != schedule[singles[0]][singles[1] - 1] &&
+          ch == 1 &&
+          schedule[singles[0]][singles[1]] == "none"
+        ) {
+          schedule[singles[0]][singles[1]] = courses[current_subj].name;
+          set(tableNo, singles[0], singles[1], c_name);
+          allocated++;
+          t[current_teach].avail[singles[0]][singles[1]] = false;
+          classes--;
+          ch--;
+          fill = false;
+          singles[0] = 0;
+          singles[1] = 0;
+        }
+      }
+      tracked = true;
+
+      //default
+      if (ch > 0 && ifAvail(current_teach, day, hour, ch) == true) {
+        current = false;
+        schedule[day][hour] = courses[current_subj].name;
+        set(tableNo, day, hour, c_name);
+        t[current_teach].avail[day][hour] = false;
+        ch--;
+        classes--;
+        allocated++;
+        continue;
+      } else if (ch > 0 && !ifAvail(current_teach, day, hour, ch)) {
+        courses[current_subj].pointer--;
+        if (current_subj < k - 1) {
+          current_subj++;
+        } else if (current_subj == k - 1) {
+          current_subj = 0;
+        }
+        credit_h = true;
+        hour--;
+        continue;
+      } else if (classes <= 0) {
+        //  console.table(schedule);
+        // var table = "";
+        // var rows = 5;
+        // var cols = 8;
+        // table +=
+        //   "<tr><th>8-9</th><th>9-10</th><th>10-11</th><th>11-12</th><th>12-1</th><th>1-2</th><th>2-3</th><th>3-4</th></tr >";
+        // for (var r = 0; r < rows; r++) {
+        //   table += "<tr>";
+        //   for (let index = 0; index < cols; index++) {
+        //     table += "<td>" + schedule[r][index] + "</td>";
+        //   }
+        //   table += "</tr>";
+        // }
+        // document.write("<table>" + table + "</table>");
+        if (roomNo >= n) {
+          // roomNo++;
+          show(tableNo, roomNo++);
+          console.table(schedule);
+          return;
+        }
+        if (validateExit()) {
+          // roomNo++;
+          console.table(schedule);
+          // console.log("nice")
+          console.log(allocated);
+          show(tableNo, roomNo++);
+
+          return;
+        } else {
+          classes = classes + k;
+          // current_subj = 0;
+          if (loopHour == hour && loopDay == 2*day) {
+            hour++;
+          }
+          loopHour = hour;
+          loopDay = day;
+          hour--;
+          continue;
+        }
+      }
+      // else {
+      //   classes++;
+      //   current_subj = 0;
+      //   continue;
+      // }
+      else {
+        if (
+          ch > 0 &&
+          courses[current_subj].pointer == courses[current_subj].lectures
+        ) {
+          classes = classes + k;
+        } else if (current_subj < k - 1) {
+          current_subj++;
+        } else if (current_subj == k - 1) {
+          current_subj = 0;
+        }
+        credit_h = true;
+        hour--;
+      }
+
+      //handle diff classes of same subject
+    }
+
+    if (day == w_days - 1) {
+      if (roomNo == n) {
+        console.table(schedule);
+
+        show(tableNo, roomNo++);
+        return;
+      }
+
+      console.table(schedule);
+
+      show(tableNo, roomNo++);
+      day = 0;
+      hour = 0;
+      if (schedule[singles[0]][singles[1]] == "none") {
+        availSingle(tableNo, singles[0], singles[1]);
+        setSingle(tableNo);
+      }
+      singles[0] = 0;
+      singles[1] = 0;
+      track[0] = 0;
+      track[1] = 0;
+      track[2] = 0;
+      tableNo++;
+      init();
+    } else day++;
+  }
+}

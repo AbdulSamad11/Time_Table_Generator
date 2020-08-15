@@ -11,7 +11,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 nav {
-  background: #1b3899;
+  background: rgb(5, 104, 196);
   height: 80px;
   width: 100%;
 }
@@ -226,7 +226,7 @@ section {
 } */
 
 #gen {
- padding: 30px;
+  padding: 30px;
   border-radius: 40px;
   border: none;
   background-color: cornflowerblue;

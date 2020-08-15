@@ -89,19 +89,19 @@
           value=""
           placeholder="8"
         />
-        <button id="Btn" type="submit" onclick="getStart()">ADD</button>
-        <button id="myBtn" type="submit" onclick="showStart()">show</button>
-        <button type="reset" id="myBtn" onclick="resetStart()">RESET</button>
-        <p id="writeHour"></p>
+        <button id="Btn1" type="submit" onclick="getStart()">ADD</button>
         <script>
           var input = document.getElementById("startHour");
           input.addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
               event.preventDefault();
-              document.getElementById("Btn").click();
+              document.getElementById("Btn1").click();
             }
           });
         </script>
+        <button id="myBtn" type="submit" onclick="showStart()">show</button>
+        <button type="reset" id="myBtn" onclick="resetStart()">RESET</button>
+        <p id="writeHour"></p>
       </div>
       <a href="./rooms.html"><h3 id="next">NEXT</h3></a>
     </section>
