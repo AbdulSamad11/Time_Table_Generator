@@ -473,7 +473,7 @@ function generate() {
         } else {
           classes = classes + k;
           // current_subj = 0;
-          if (loopHour == hour && loopDay == 2*day) {
+          if (loopHour == hour && loopDay == 2 * day) {
             hour++;
           }
           loopHour = hour;

@@ -1,25 +1,8 @@
 let rooms = [];
 function getRoom() {
-  roomName = document.getElementById("myInput").value;
+  roomName = document.getElementById("rmInput").value;
   rooms.push(roomName);
   localStorage.setItem("roomNames", rooms);
-  document.getElementById("name").innerHTML = rooms;
-  document.getElementById("myInput").value = "";
+  document.getElementById("rmInput").value = "";
 }
 
-function showRooms() {
-  rooms = localStorage.getItem("roomNames").split(",");
-  fLen = rooms.length;
-  text = "<ul>";
-  for (i = 0; i < fLen; i++) {
-    text += "<li>" + rooms[i] + "</li>";
-  }
-  text += "</ul>";
-
-  document.getElementById("name").innerHTML = text;
-}
-function resetRooms() {
-  rooms = "";
-  localStorage.removeItem("roomNames");
-  document.getElementById("name").innerHTML = "";
-}
