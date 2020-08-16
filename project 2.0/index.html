@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="hour.js"></script>
+    <script src="room.js"></script>
+    <script src="course.js"></script>
+    <script src="script.js"></script>
+    <script src="hour.js"></script>
+  </head>
+  <body>
+    <div class="form-style-5">
+      <form>
+        <div class="con">
+          <button id="reset" type="reset" onclick="resett()">
+            reset
+          </button>
+          <script>
+            function resett() {
+              localStorage.clear();
+              alert("Storage cleared succeessfully");
+            }
+          </script>
+        </div>
+        <fieldset>
+          <legend><span class="number">1</span>Hour Info</legend>
+          <input type="number" name="" id="wh" placeholder="Hours" />
+          <input type="number" name="" id="br" placeholder="Break Period" />
+          <input type="number" name="" id="strt" placeholder="First Period" />
+          <button id="whAdd" class="add" type="button" onclick="getHour()">
+            ADD
+          </button>
+        </fieldset>
+
+        <!-- rooms -->
+        <fieldset>
+          <legend><span class="number">2</span>Rooms Info</legend>
+          <input
+            id="rmInput"
+            style="width: 50%;"
+            type="text"
+            placeholder="Enter Room Names"
+          />
+
+          <button id="rmBut" class="add" type="button" onclick="getRoom()">
+            ADD
+          </button>
+        </fieldset>
+        <!-- COURSE INFO -->
+        <fieldset>
+          <legend><span class="number">3</span>Courses Info</legend>
+          <input
+            type="text"
+            id="crsName"
+           
+            placeholder="Course Name"
+          />
+          <input
+            type="text"
+            id="tchr"
+           
+            placeholder="Teacher Name"
+          />
+          <input
+            type="text"
+            id="lec"
+          
+            placeholder="Lectures"
+          />
+          <button id="" class="add" type="button" onclick="addCourse()">
+            Add
+          </button>
+        </fieldset>
+        <center>
+          <a
+            href="./table.html"
+            target="_blank"
+          
+          >
+            Generate
+          </a>
+        </center>
+      </form>
+    </div>
+  </body>
+</html>
