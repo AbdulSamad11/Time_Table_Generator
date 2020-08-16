@@ -28,8 +28,6 @@ start hour (in case of first lecture start at 8am we have input 8) so input 8
 list the name of the rooms one by one (for example typered then enter then yellow then enter)
 
 
-
-
                            step (3)
 enter names of the courses one by one (for example type aoa then press enter then dbase then press enter)
 enter names of the teachers one by one
