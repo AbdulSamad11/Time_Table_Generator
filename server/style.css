@@ -129,9 +129,22 @@ body {
 
 .add {
   padding: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   border-radius: 8px;
   border: none;
   background-color: #000000;
   color: #fff;
 }
 
+a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: #fff;
+  background-color: #363535;
+  padding: 15px;
+  border-radius: 15px;
+}
+a:hover{
+  background-color: #000000;
+}
